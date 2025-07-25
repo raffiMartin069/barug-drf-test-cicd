@@ -77,4 +77,4 @@ jobs:
           push: true
           tags: ghcr.io/${{ env.REPO }}:${{ github.sha }}
           context: ${{ github.workspace }}
-          file: ${{ github.workspace }}/barug-drf-test-cicd/Dockerfile
+          file: ${{ github.workspace }}/Dockerfile
