@@ -49,7 +49,7 @@ jobs:
       SENDGRID_API_KEY: ${{ secrets.SENDGRID_API_KEY }}
       NGINX_URL: ${{ secrets.NGINX_URL }}
       DOCKERFILE_URL: ${{ secrets.DOCKERFILE_URL }}
-      
+      # Docker setup
     steps:
       - uses: actions/checkout@v4
   
