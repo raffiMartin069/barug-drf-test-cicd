@@ -21,6 +21,12 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: ${{ matrix.python-version }}
+    - name: Setup environemnt
+      run: |
+        export SUPABASE_URL=${{ secrets.SUPABASE_URL }}
+        export SUPABASE_ANON_KEY=${{ secrets.SUPABASE_ANON_KEY }}
+        export SUPABASE_SERVICE_ROLE_KEY=${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
+        export SENDGRID_API_KEY=${{ secrets.SENDGRID_API_KEY }}
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
