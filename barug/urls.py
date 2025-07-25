@@ -20,7 +20,7 @@ from django.urls import path, include
 from authentication import views as auth_view
 
 urlpatterns = [
-    # Admin
+    # Adminsd
     path('admin/', admin.site.urls),
 
     # Web URLs (HTML)
