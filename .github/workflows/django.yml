@@ -75,6 +75,11 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          tags: ghcr.io/${{ env.REPO }}:${{ github.sha }}
+          tags: |
+            ghcr.io/${{ env.REPO }}:${{ github.sha }}
+            ghcr.io/${{ env.REPO }}:latest
           context: ${{ github.workspace }}
           file: ${{ github.workspace }}/Dockerfile
+
+      - name: Go live!
+        run: curl -X POST ${{ secrets.RENDER_HOOK }}
