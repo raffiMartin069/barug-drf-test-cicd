@@ -81,5 +81,11 @@ jobs:
           context: ${{ github.workspace }}
           file: ${{ github.workspace }}/Dockerfile
 
-      - name: Go live!
+  Live:
+    runs-on: ubuntu-latest
+    needs: ghcr
+    
+    steps:
+      - name: Go Live!
         run: curl -X POST ${{ secrets.RENDER_HOOK }}
+
