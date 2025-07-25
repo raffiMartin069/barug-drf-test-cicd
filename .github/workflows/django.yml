@@ -67,7 +67,9 @@ jobs:
         run: echo "REPO=${GITHUB_REPOSITORY,,}" >>${GITHUB_ENV}
 
       - name: Fetch required configs
-        run: python3 ./configs/gdrive.py
+        run: |
+          python3 -m pip install gdown
+          python3 ./configs/gdrive.py
         
       - name: Build and push container image to registry
         uses: docker/build-push-action@v4
